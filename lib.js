@@ -17,10 +17,10 @@
 function ApiTimeInput() {
 }
 
-ApiTimeInput.prototype.validate_time_string = function (time_string, allow_relative = false) {
+ApiTimeInput.prototype.validate_time_string = function(time_string, allow_relative) {
     let relative = (time_string.charAt(0) == "+");
 
-    if (relative && !allow_relative) {
+    if (relative && allow_relative != true) {
         return null;
     }
 
